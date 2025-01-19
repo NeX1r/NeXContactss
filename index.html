@@ -142,31 +142,34 @@
     @media (max-width: 768px) {
       .bio-header {
         font-size: 36px; /* Уменьшаем размер шрифта для мобильных устройств */
+        text-transform: uppercase;
+        margin-bottom: 20px;
       }
-
+    
       .avatar {
-        width: 150px; /* Уменьшаем размер аватарки */
+        width: 150px;
         height: 150px;
       }
-
+    
       .bio {
-        font-size: 14px; /* Уменьшаем размер текста в биографии */
+        font-size: 14px; /* Уменьшаем размер шрифта */
         margin-top: 50px;
-        max-width: 100%; /* Разрешаем растягиваться на весь экран */
-        padding: 0 20px; /* Добавляем отступы */
+        max-width: 100%;
+        padding: 0 20px; /* Отступы для мобильных */
+        text-align: justify;
       }
-
+    
       .links a {
-        font-size: 16px; /* Уменьшаем размер шрифта в ссылках */
+        font-size: 16px;
         padding: 10px 20px;
       }
-
+    
       .footer {
-        font-size: 12px; /* Уменьшаем размер шрифта в футере */
+        font-size: 12px;
       }
-
+    
       .bio-header {
-        bottom: 30%; /* Перемещаем заголовок "Биография" выше на мобильных */
+        margin-bottom: 20px; /* Перемещаем вниз */
       }
     }
   </style>
