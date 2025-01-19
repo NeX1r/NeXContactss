@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeX Links</title>
+  <style>
+    /* Основной стиль страницы */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      background: #2a1b4f;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative; /* Для абсолютного позиционирования */
+    }
+
+    /* Живые обои */
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); /* Можно заменить на любое изображение фона */
+      background-size: cover;
+      opacity: 0.6;
+      z-index: -1;
+    }
+
+    /* Плавный градиент снизу от строки "Биография" */
+    .gradient {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(42, 27, 79, 0.9) 0%, rgba(0, 0, 0, 0) 80%);
+      z-index: -2;
+    }
+
+    /* Стили для заглавной строчки "Биография" */
+    .bio-header {
+      font-size: 48px;
+      font-weight: bold;
+      color: #fff;
+      text-transform: uppercase;
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      margin-bottom: 0;
+      z-index: 1; /* Чтобы быть выше градиента */
+    }
+
+    /* Стили для аватарки */
+    .avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background-color: #eee;
+      margin-bottom: 20px;
+      border: 4px solid #fff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .avatar:hover {
+      transform: scale(1.1);
+    }
+
+    /* Стили для блоков с ссылками */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .links a {
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 12px 25px;
+      color: white;
+      background: #4b3d7d;
+      border: 2px solid #9b83c2;
+      border-radius: 50px;
+      transition: all 0.3s ease, transform 0.2s ease-in-out;
+      text-transform: uppercase;
+    }
+
+    .links a:hover {
+      background: #9b83c2;
+      color: #1d1f33;
+      border-color: white;
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Стили для биографии */
+    .bio {
+      font-size: 16px;
+      margin-bottom: 30px;
+      max-width: 750px;
+      line-height: 1.7;
+      text-align: justify;
+      text-indent: 30px;
+      margin-top: 100px; /* Для перемещения биографии ниже */
+    }
+
+    /* Стили для нижней панели */
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #aaa;
+      padding: 10px 20px;
+      background: #222;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      text-align: center;
+    }
+
+    .footer a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Живые обои -->
+  <div class="background"></div>
+
+  <!-- Градиент снизу -->
+  <div class="gradient"></div>
+
+  <!-- Заглавная строчка "Биография" -->
+  <div class="bio-header">Биография</div>
+
+  <!-- Аватар -->
+  <img class="avatar" src="avatar.jpg" alt="NeX Avatar">
+  
+  <!-- Ссылки -->
+  <div class="links">
+    <a href="https://www.twitch.tv/just_nex1k" target="_blank">Twitch</a>
+    <a href="https://www.tiktok.com/@ragecore.game?_t=ZM-8sKceoxjFqf&_r=1" target="_blank">TikTok</a>
+    <a href="https://x.com/HiJustNeX?t=BmOSknUoaLT5u8lzHPakMA&s=09" target="_blank">Twitter</a>
+    <a href="https://youtube.com/@nex1kshmeksik?si=HRAolAo0qLvRrSK4" target="_blank">YouTube</a>
+    <a href="https://t.me/JustNeXRu" target="_blank">Telegram (RU)</a>
+    <a href="https://t.me/JustNeXEn" target="_blank">Telegram (EN)</a>
+  </div>
+
+  <!-- Биография -->
+  <div class="bio">
+    Привет! Я Некс.
+    Мне 15 лет, Я из Украины, и с самого детства я мечтал создавать что-то своё. Я всегда увлекался программированием, 3D-дизайном и созданием игр, проводя часы за изучением новых инструментов и технологий. Сейчас я работаю над своим самым большим и амбициозным проектом — бумер-шутером Ragecore.
+    Ragecore — это игра, вдохновленная атмосферой ада и христианскими библейскими мотивами. Её главный герой — алкаш-ковбой, который, несмотря на своё сомнительное прошлое, встаёт на путь войны с демонами. Я вдохновляюсь культовыми играми, такими как DOOM, Quake и Ultrakill, чтобы создать проект, полный адреналина, кровавого экшена и хардкорных сражений.
+    Я занимаюсь разработкой 3 месяца полностью самостоятельно: пишу код, создаю 3D-модели, текстуры, анимации и даже озвучку. Мне нравится прорабатывать каждый элемент до мелочей, чтобы создать уникальную атмосферу и сделать игру незабываемой. Для меня разработка — это больше, чем работа. Это способ выразить себя, вложить душу в каждый кадр и каждую механику.
+    Помимо разработки игр, я обожаю цифровое искусство. Я рисую концепты, придумываю персонажей, строю миры и стримлю процесс своей работы. Делюсь своими идеями и показываю, что даже в одиночку можно создать что-то великое, если есть страсть и упорство.
+    Моя мечта — сделать Ragecore настоящей культовой игрой, которая найдёт своих фанатов среди тех, кто ценит хардкорный экшен. Я хочу вдохновить других разработчиков, особенно начинающих, и показать, что создание игр — это захватывающее приключение, которое открыто для каждого.
+    Если вам интересно, чем я занимаюсь, или вы хотите поддержать меня, пишите и подписывайтесь на мои соц-сети! Я всегда рад новым знакомствам, интересным беседам и вашей обратной связи.
+  </div>
+
+  <!-- Нижняя панель -->
+  <div class="footer">
+    Как связаться: <a href="mailto:nex1rcontact@gmail.com">nex1rcontact@gmail.com</a>
+  </div>
+
+</body>
+</html>
