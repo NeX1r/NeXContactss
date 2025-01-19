@@ -48,16 +48,14 @@
 
     /* Стили для заглавной строчки "Биография" */
     .bio-header {
-      font-size: 48px;
+      font-size: 36px; /* Уменьшаем размер шрифта */
       font-weight: bold;
       color: #fff;
       text-transform: uppercase;
-      position: absolute;
-      bottom: 50%;
-      left: 50%;
-      transform: translate(-50%, 50%);
-      margin-bottom: 0;
-      z-index: 1; /* Чтобы быть выше градиента */
+      margin-bottom: 20px; /* Отступ снизу */
+      text-align: center; /* Центрируем текст */
+      position: static; /* Убираем абсолютное позиционирование */
+      transform: none; /* Убираем сдвиги */
     }
 
     /* Стили для аватарки */
