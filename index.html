@@ -16,12 +16,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start; /* Изменяем центрирование на начало */
+      justify-content: flex-start;
       min-height: 100vh;
       overflow: hidden; /* Прокрутка заблокирована для ПК */
       position: relative; /* Для абсолютного позиционирования */
     }
-    
+
     /* Живые обои */
     .background {
       position: absolute;
@@ -34,7 +34,7 @@
       opacity: 0.6;
       z-index: -1;
     }
-    
+
     /* Плавный градиент снизу от строки "Биография" */
     .gradient {
       position: absolute;
@@ -45,18 +45,7 @@
       background: linear-gradient(to top, rgba(42, 27, 79, 0.9) 0%, rgba(0, 0, 0, 0) 80%);
       z-index: -2;
     }
-    
-    /* Стили для заглавной строчки "Биография" */
-    .bio-header {
-      font-size: 48px;
-      font-weight: bold;
-      color: #fff;
-      text-transform: uppercase;
-      margin-top: 100px; /* Позиционирование с отступом сверху */
-      margin-bottom: 20px; /* Отступ снизу */
-      z-index: 1; /* Чтобы быть выше градиента */
-    }
-    
+
     /* Стили для аватарки */
     .avatar {
       width: 180px;
@@ -68,11 +57,11 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s ease;
     }
-    
+
     .avatar:hover {
       transform: scale(1.1);
     }
-    
+
     /* Стили для блоков с ссылками */
     .links {
       display: flex;
@@ -80,7 +69,7 @@
       gap: 15px;
       margin-bottom: 30px;
     }
-    
+
     .links a {
       text-decoration: none;
       font-size: 18px;
@@ -93,7 +82,7 @@
       transition: all 0.3s ease, transform 0.2s ease-in-out;
       text-transform: uppercase;
     }
-    
+
     .links a:hover {
       background: #9b83c2;
       color: #1d1f33;
@@ -101,7 +90,18 @@
       transform: scale(1.05);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
-    
+
+    /* Стили для заголовка биографии */
+    .bio-header {
+      font-size: 48px;
+      font-weight: bold;
+      color: #fff;
+      text-transform: uppercase;
+      margin-top: 50px; /* Отступ сверху для заголовка */
+      margin-bottom: 20px; /* Отступ снизу */
+      z-index: 1; /* Чтобы быть выше градиента */
+    }
+
     /* Стили для биографии */
     .bio {
       font-size: 16px;
@@ -110,9 +110,9 @@
       line-height: 1.7;
       text-align: justify;
       text-indent: 30px;
-      margin-top: 20px; /* Уменьшаем отступ сверху */
+      margin-top: 0; /* Убираем отступ сверху, чтобы биография шла сразу после заголовка */
     }
-    
+
     /* Стили для нижней панели */
     .footer {
       margin-top: 30px;
@@ -125,17 +125,17 @@
       bottom: 0;
       text-align: center;
     }
-    
+
     .footer a {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
     }
-    
+
     .footer a:hover {
       text-decoration: underline;
     }
-    
+
     /* Медиазапросы для адаптивности */
     @media (max-width: 768px) {
       body {
@@ -146,7 +146,7 @@
         justify-content: flex-start;
         min-height: 100vh;
       }
-    
+
       .bio-header {
         font-size: 36px;
         text-transform: uppercase;
@@ -154,13 +154,13 @@
         margin-bottom: 20px; /* Добавляем отступ снизу */
         text-align: center; /* Центрируем текст */
       }
-    
+
       .avatar {
         width: 150px;
         height: 150px;
         margin-bottom: 20px;
       }
-    
+
       .bio {
         font-size: 14px; /* Уменьшаем размер шрифта */
         margin-top: 50px; /* Отступ сверху */
@@ -168,23 +168,23 @@
         padding: 0 20px; /* Отступы для мобильных */
         text-align: justify;
       }
-    
+
       .links {
         display: flex;
         flex-direction: column;
         gap: 15px;
         margin-bottom: 30px;
       }
-    
+
       .links a {
         font-size: 16px;
         padding: 10px 20px;
       }
-    
+
       .footer {
         font-size: 12px;
       }
-    
+
       /* Стили для блока ссылок */
       .links {
         margin-bottom: 20px; /* Уменьшаем отступ снизу */
