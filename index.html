@@ -147,6 +147,7 @@
         align-items: center; /* Центрируем содержимое */
         justify-content: flex-start;
         min-height: 100vh;
+        position: relative; /* Для корректной работы с позиционированием */
       }
     
       .bio-header {
@@ -155,6 +156,7 @@
         margin-top: 20px; /* Было 80px, стало 20px */
         margin-bottom: 20px; /* Добавляем отступ снизу */
         text-align: center; /* Центрируем текст */
+        position: relative; /* Меняем на relative, чтобы не было фиксированного положения */
       }
     
       .avatar {
@@ -164,7 +166,7 @@
     
       .bio {
         font-size: 14px; /* Уменьшаем размер шрифта */
-        margin-top: 140px; /* Было 100px, стало 140px */
+        margin-top: 140px; /* Увеличиваем отступ сверху */
         max-width: 100%;
         padding: 0 20px; /* Отступы для мобильных */
         text-align: justify;
