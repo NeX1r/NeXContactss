@@ -142,6 +142,11 @@
     @media (max-width: 768px) {
       body {
         overflow-y: auto; /* Включаем прокрутку только для мобильных устройств */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Центрируем содержимое */
+        justify-content: flex-start;
+        min-height: 100vh;
       }
     
       .bio-header {
@@ -149,9 +154,7 @@
         text-transform: uppercase;
         margin-top: 20px; /* Добавляем небольшой отступ сверху */
         margin-bottom: 20px; /* Добавляем отступ снизу */
-        position: relative; /* Убираем абсолютное позиционирование */
-        margin-left: 0; /* Убираем левый отступ для выравнивания */
-        padding: 0; /* Убираем внутренние отступы */
+        text-align: center; /* Центрируем текст */
       }
     
       .avatar {
@@ -167,6 +170,13 @@
         text-align: justify;
       }
     
+      .links {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+    
       .links a {
         font-size: 16px;
         padding: 10px 20px;
@@ -176,9 +186,9 @@
         font-size: 12px;
       }
     
-      /* Изменим отступы для блока .bio, чтобы он не был слишком отдален от заголовка */
+      /* Стили для блока ссылок */
       .links {
-        margin-bottom: 10px; /* Уменьшаем отступ снизу */
+        margin-bottom: 20px; /* Уменьшаем отступ снизу */
       }
     }
   </style>
