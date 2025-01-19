@@ -18,7 +18,7 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      overflow: hidden;
+      overflow: hidden; /* Прокрутка заблокирована для ПК */
       position: relative; /* Для абсолютного позиционирования */
     }
 
@@ -140,6 +140,10 @@
     }
     /* Медиазапросы для адаптивности */
     @media (max-width: 768px) {
+      body {
+        overflow-y: auto; /* Включаем прокрутку только для мобильных устройств */
+      }
+    
       .bio-header {
         font-size: 36px; /* Уменьшаем размер шрифта для мобильных устройств */
         text-transform: uppercase;
