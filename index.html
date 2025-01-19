@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NeX Links</title>
   <style>
-    /* Основной стиль страницы */
     body {
       margin: 0;
       padding: 0;
@@ -18,11 +17,10 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      overflow: hidden; /* Прокрутка заблокирована для ПК */
-      position: relative; /* Для абсолютного позиционирования */
+      overflow: hidden; 
+      position: relative; 
     }
-
-    /* Живые обои */
+    
     .background {
       position: absolute;
       top: 0;
@@ -34,8 +32,7 @@
       opacity: 0.6;
       z-index: -1;
     }
-
-    /* Плавный градиент снизу от строки "Биография" */
+    
     .gradient {
       position: absolute;
       bottom: 0;
@@ -46,7 +43,6 @@
       z-index: -2;
     }
 
-    /* Стили для заглавной строчки "Биография" */
     .bio-header {
       font-size: 48px;
       font-weight: bold;
@@ -57,10 +53,9 @@
       left: 50%;
       transform: translate(-50%, 50%);
       margin-bottom: 0;
-      z-index: 1; /* Чтобы быть выше градиента */
+      z-index: 1; 
     }
 
-    /* Стили для аватарки */
     .avatar {
       width: 180px;
       height: 180px;
@@ -76,7 +71,6 @@
       transform: scale(1.1);
     }
 
-    /* Стили для блоков с ссылками */
     .links {
       display: flex;
       flex-direction: column;
@@ -105,7 +99,6 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
-    /* Стили для биографии */
     .bio {
       font-size: 16px;
       margin-bottom: 30px;
@@ -113,10 +106,9 @@
       line-height: 1.7;
       text-align: justify;
       text-indent: 30px;
-      margin-top: 100px; /* Для перемещения биографии ниже */
+      margin-top: 100px; 
     }
 
-    /* Стили для нижней панели */
     .footer {
       margin-top: 30px;
       font-size: 14px;
@@ -138,13 +130,12 @@
     .footer a:hover {
       text-decoration: underline;
     }
-    /* Медиазапросы для адаптивности */
     @media (max-width: 768px) {
       body {
-        overflow-y: auto; /* Включаем прокрутку только для мобильных устройств */
+        overflow-y: auto; 
         display: flex;
         flex-direction: column;
-        align-items: center; /* Центрируем содержимое */
+        align-items: center; 
         justify-content: flex-start;
         min-height: 100vh;
       }
@@ -152,9 +143,9 @@
       .bio-header {
         font-size: 36px;
         text-transform: uppercase;
-        margin-top: 500px; /* Корректируем отступ сверху 80 */
-        margin-bottom: 200px; /* Добавляем отступ снизу 20 */
-        text-align: center; /* Центрируем текст */
+        margin-top: 500px; 
+        margin-bottom: 200px; 
+        text-align: center; 
       }
 
       .avatar {
@@ -164,10 +155,10 @@
       }
 
       .bio {
-        font-size: 14px; /* Уменьшаем размер шрифта */
-        margin-top: 50px; /* Отступ сверху */
+        font-size: 14px; 
+        margin-top: 50px;
         max-width: 100%;
-        padding: 0 20px; /* Отступы для мобильных */
+        padding: 0 20px; 
         text-align: justify;
       }
 
@@ -187,28 +178,22 @@
         font-size: 12px;
       }
 
-      /* Стили для блока ссылок */
       .links {
-        margin-bottom: 20px; /* Уменьшаем отступ снизу */
+        margin-bottom: 20px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Живые обои -->
   <div class="background"></div>
 
-  <!-- Градиент снизу -->
   <div class="gradient"></div>
 
-  <!-- Заглавная строчка "Биография" -->
-  <div class="bio-header">Биография</div>
+  <div class="bio-header">Biography</div>
 
-  <!-- Аватар -->
   <img class="avatar" src="avatar.jpg" alt="NeX Avatar">
 
-  <!-- Ссылки -->
   <div class="links">
     <a href="https://www.twitch.tv/just_nex1k" target="_blank">Twitch</a>
     <a href="https://www.tiktok.com/@justnex1r?_t=ZM-8sKceoxjFqf&_r=1" target="_blank">TikTok</a>
@@ -218,20 +203,18 @@
     <a href="https://t.me/JustNeXEn" target="_blank">Telegram (EN)</a>
   </div>
 
-  <!-- Биография -->
   <div class="bio">
-    Привет! Я Некс.
-    Мне 15 лет, Я из Украины, и с самого детства я мечтал создавать что-то своё. Я всегда увлекался программированием, 3D-дизайном и созданием игр, проводя часы за изучением новых инструментов и технологий. Сейчас я работаю над своим самым большим и амбициозным проектом — бумер-шутером Ragecore.
-    Ragecore — это игра, вдохновленная атмосферой ада и христианскими библейскими мотивами. Её главный герой — алкаш-ковбой, который, несмотря на своё сомнительное прошлое, встаёт на путь войны с демонами. Я вдохновляюсь культовыми играми, такими как DOOM, Quake и Ultrakill, чтобы создать проект, полный адреналина, кровавого экшена и хардкорных сражений.
-    Я занимаюсь разработкой 3 месяца полностью самостоятельно: пишу код, создаю 3D-модели, текстуры, анимации и даже озвучку. Мне нравится прорабатывать каждый элемент до мелочей, чтобы создать уникальную атмосферу и сделать игру незабываемой. Для меня разработка — это больше, чем работа. Это способ выразить себя, вложить душу в каждый кадр и каждую механику.
-    Помимо разработки игр, я обожаю цифровое искусство. Я рисую концепты, придумываю персонажей, строю миры и стримлю процесс своей работы. Делюсь своими идеями и показываю, что даже в одиночку можно создать что-то великое, если есть страсть и упорство.
-    Моя мечта — сделать Ragecore настоящей культовой игрой, которая найдёт своих фанатов среди тех, кто ценит хардкорный экшен. Я хочу вдохновить других разработчиков, особенно начинающих, и показать, что создание игр — это захватывающее приключение, которое открыто для каждого.
-    Если вам интересно, чем я занимаюсь, или вы хотите поддержать меня, пишите и подписывайтесь на мои соц-сети! Я всегда рад новым знакомствам, интересным беседам и вашей обратной связи.
+    Hi! I'm NeX.
+    I'm 15 years old, from Ukraine, and since childhood, I've dreamed of creating something of my own. I've always been passionate about programming, 3D design, and game development, spending countless hours learning new tools and technologies. Right now, I'm working on my biggest and most ambitious project — the boomer shooter Ragecore.
+    Ragecore is a game inspired by the atmosphere of hell and Christian biblical themes. Its protagonist is a cowboy-alcoholic who, despite his questionable past, embarks on a path of war against demons. I'm drawing inspiration from iconic games like DOOM, Quake, and Ultrakill to create a project filled with adrenaline, bloody action, and hardcore battles.
+    I've been developing the game entirely on my own since November 2024: writing code, creating 3D models, textures, animations, and even voice acting. I love working on every detail to create a unique atmosphere and make the game unforgettable. For me, development is more than just work—it's a way to express myself, to pour my soul into every frame and every mechanic.
+    Beyond game development, I’m passionate about digital art. I draw concepts, design characters, build worlds, and stream my creative process. I love sharing my ideas and proving that even as a solo developer, you can create something amazing with enough passion and perseverance.
+    My dream is to make Ragecore a truly iconic game that finds its audience among fans of hardcore action. I want to inspire other developers, especially beginners, and show that game development is an exciting adventure open to anyone.
+    If you're interested in what I do or want to support me, feel free to reach out or follow me on my social media! I’m always happy to meet new people, have interesting conversations, and hear your feedback.
   </div>
 
-  <!-- Нижняя панель -->
   <div class="footer">
-    Как связаться: <a href="mailto:nex1rcontact@gmail.com">nex1rcontact@gmail.com</a>
+    How to contact: <a href="mailto:nex1rcontact@gmail.com">nex1rcontact@gmail.com</a>
   </div>
 
 </body>
