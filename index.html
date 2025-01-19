@@ -147,26 +147,25 @@
         align-items: center; /* Центрируем содержимое */
         justify-content: flex-start;
         min-height: 100vh;
-        position: relative; /* Для корректной работы с позиционированием */
       }
     
       .bio-header {
         font-size: 36px;
         text-transform: uppercase;
-        margin-top: 20px; /* Было 80px, стало 20px */
+        margin-top: 80px; /* Корректируем отступ сверху */
         margin-bottom: 20px; /* Добавляем отступ снизу */
         text-align: center; /* Центрируем текст */
-        position: relative; /* Меняем на relative, чтобы не было фиксированного положения */
       }
     
       .avatar {
         width: 150px;
         height: 150px;
+        margin-bottom: 20px;
       }
     
       .bio {
         font-size: 14px; /* Уменьшаем размер шрифта */
-        margin-top: 140px; /* Увеличиваем отступ сверху */
+        margin-top: 50px; /* Отступ сверху */
         max-width: 100%;
         padding: 0 20px; /* Отступы для мобильных */
         text-align: justify;
