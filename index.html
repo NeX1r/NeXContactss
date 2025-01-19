@@ -52,10 +52,12 @@
       font-weight: bold;
       color: #fff;
       text-transform: uppercase;
-      margin-top: 100px; /* Отступ сверху */
-      margin-bottom: 20px; /* Добавляем отступ снизу */
-      z-index: 1;
-      text-align: center; /* Центрируем текст */
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      margin-bottom: 0;
+      z-index: 1; /* Чтобы быть выше градиента */
     }
 
     /* Стили для аватарки */
@@ -149,8 +151,10 @@
 
       .bio-header {
         font-size: 36px;
-        margin-top: 100px; /* Меньше отступ сверху для мобильных */
-        text-align: center; /* Центрируем */
+        text-transform: uppercase;
+        margin-top: 80px; /* Корректируем отступ сверху */
+        margin-bottom: 20px; /* Добавляем отступ снизу */
+        text-align: center; /* Центрируем текст */
       }
 
       .avatar {
