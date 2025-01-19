@@ -145,9 +145,10 @@
       }
     
       .bio-header {
-        font-size: 36px; /* Уменьшаем размер шрифта для мобильных устройств */
+        font-size: 36px;
         text-transform: uppercase;
-        margin-bottom: 20px;
+        margin-top: 0; /* Убираем отступ сверху */
+        margin-bottom: -20px; /* Поднимаем заголовок на 20 пикселей вверх */
       }
     
       .avatar {
@@ -170,10 +171,6 @@
     
       .footer {
         font-size: 12px;
-      }
-    
-      .bio-header {
-        margin-top: -20px; /* Перемещаем вниз */
       }
     }
   </style>
