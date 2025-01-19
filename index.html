@@ -150,11 +150,12 @@
       }
     
       .bio-header {
-        font-size: 36px;
-        text-transform: uppercase;
-        margin-top: 80px; /* Корректируем отступ сверху */
-        margin-bottom: 20px; /* Добавляем отступ снизу */
-        text-align: center; /* Центрируем текст */
+        position: relative; /* Отменяем absolute */
+        transform: none; /* Убираем смещение */
+        margin-top: 20px; /* Отступ сверху */
+        margin-bottom: 10px; /* Отступ снизу */
+        font-size: 24px; /* Уменьшаем размер текста для телефона */
+        text-align: center; /* Центрируем заголовок */
       }
     
       .avatar {
@@ -164,11 +165,9 @@
       }
     
       .bio {
-        font-size: 14px; /* Уменьшаем размер шрифта */
-        margin-top: 50px; /* Отступ сверху */
-        max-width: 100%;
-        padding: 0 20px; /* Отступы для мобильных */
-        text-align: justify;
+        margin-top: 20px; /* Отступ сверху, чтобы текст не налезал */
+        padding: 0 15px; /* Отступы по бокам для лучшей читаемости */
+        font-size: 14px; /* Уменьшаем размер шрифта для мобильных */
       }
     
       .links {
