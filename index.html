@@ -1,222 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NeX Links</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      text-align: center;
-      background: #2a1b4f;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      overflow: hidden; 
-      position: relative; 
-    }
-    
-    .background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); /* Можно заменить на любое изображение фона */
-      background-size: cover;
-      opacity: 0.6;
-      z-index: -1;
-    }
-    
-    .gradient {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to top, rgba(42, 27, 79, 0.9) 0%, rgba(0, 0, 0, 0) 80%);
-      z-index: -2;
-    }
-
-    .bio-header {
-      font-size: 48px;
-      font-weight: bold;
-      color: #fff;
-      text-transform: uppercase;
-      position: absolute;
-      bottom: 45%;
-      left: 50%;
-      transform: translate(-50%, 50%);
-      margin-bottom: 0;
-      z-index: 1; 
-    }
-
-    .avatar {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      background-color: #eee;
-      margin-bottom: 20px;
-      border: 4px solid #fff;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease;
-    }
-
-    .avatar:hover {
-      transform: scale(1.1);
-    }
-
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin-bottom: 30px;
-    }
-
-    .links a {
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-      padding: 12px 25px;
-      color: white;
-      background: #4b3d7d;
-      border: 2px solid #9b83c2;
-      border-radius: 50px;
-      transition: all 0.3s ease, transform 0.2s ease-in-out;
-      text-transform: uppercase;
-    }
-
-    .links a:hover {
-      background: #9b83c2;
-      color: #1d1f33;
-      border-color: white;
-      transform: scale(1.05);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .bio {
-      font-size: 16px;
-      margin-bottom: 30px;
-      max-width: 750px;
-      line-height: 1.7;
-      text-align: justify;
-      text-indent: 30px;
-      margin-top: 100px; 
-    }
-
-    .footer {
-      margin-top: 30px;
-      font-size: 14px;
-      color: #aaa;
-      padding: 10px 20px;
-      background: #222;
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-      text-align: center;
-    }
-
-    .footer a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 768px) {
-      body {
-        overflow-y: auto; 
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-        justify-content: flex-start;
-        min-height: 100vh;
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
-      .bio-header {
-        font-size: 36px;
-        text-transform: uppercase;
-        margin-top: 500px; 
-        margin-bottom: 175px; 
-        text-align: center; 
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        background: #000;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 300%;
+        background: radial-gradient(circle at 50% 50%, #2a1b4f, #120934, #000);
+        animation: scroll-bg 30s linear infinite;
+        z-index: -2;
+      }
+
+      @keyframes scroll-bg {
+        0% { background-position: 0 0; }
+        100% { background-position: 0 -200%; }
+      }
+
+      .stars {
+        position: fixed;
+        width: 200%;
+        height: 200%;
+        background: url('https://www.transparenttextures.com/patterns/stardust.png');
+        animation: move-stars 25s linear infinite;
+        z-index: -1;
+        opacity: 0.7;
+      }
+
+      @keyframes move-stars {
+        0% { transform: translate(0, 0); }
+        100% { transform: translate(-200px, -200px); }
       }
 
       .avatar {
-        width: 150px;
-        height: 150px;
-        margin-bottom: 20px;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        background-color: #eee;
+        border: 4px solid #fff;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+        animation: float 6s ease-in-out infinite;
+        margin-top: 20px;
       }
 
-      .bio {
-        font-size: 14px; 
-        margin-top: 50px;
-        max-width: 100%;
-        padding: 0 20px; 
-        text-align: justify;
+      .avatar:hover {
+        transform: scale(1.2);
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
       }
 
       .links {
         display: flex;
         flex-direction: column;
-        gap: 15px;
-        margin-bottom: 30px;
+        gap: 20px;
+        margin: 40px 0;
       }
 
       .links a {
-        font-size: 16px;
-        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 22px;
+        font-weight: bold;
+        padding: 15px 35px;
+        color: white;
+        background: #4b3d7d;
+        border: 2px solid #9b83c2;
+        border-radius: 50px;
+        text-transform: uppercase;
+        animation: float-sway 6s ease-in-out infinite;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
+      @keyframes float-sway {
+        0%, 100% {
+          transform: translateY(0) rotate(-2deg);
+        }
+        25% {
+          transform: translateY(-10px) rotate(1deg);
+        }
+        50% {
+          transform: translateY(-15px) rotate(2deg);
+        }
+        75% {
+          transform: translateY(-10px) rotate(-1deg);
+        }
+      }
+
+      @keyframes sway-links {
+        0% { transform: rotate(-2deg); }
+        50% { transform: rotate(1deg); }
+        100% { transform: rotate(-1deg); }
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+      }
+
+      @keyframes sway {
+        0% { transform: rotate(-3deg); }
+        50% { transform: rotate(2deg); }
+        100% { transform: rotate(-1deg); }
+      }
+      .links a:hover {
+        background: #9b83c2;
+        color: #1d1f33;
+        border-color: white;
+        transform: scale(1.2) rotate(4deg);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+      .bio-header {
+        font-size: 36px;
+        font-weight: bold;
+        color: #fff;
+        text-transform: uppercase;
+        margin-top: 20px;
+      }
+      .bio {
+        font-size: 18px;
+        margin-bottom: 50px;
+        max-width: 750px;
+        line-height: 1.9;
+        text-align: justify;
+        padding: 0 20px;
+        text-indent: 30px;
+      }
       .footer {
-        font-size: 12px;
+        margin-top: 30px;
+        font-size: 16px;
+        color: #aaa;
+        padding: 10px 20px;
+        background: #222;
+        width: 100%;
+        text-align: center;
       }
-
-      .links {
-        margin-bottom: 20px;
+      .footer a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
       }
-    }
-  </style>
-</head>
-<body>
+      .footer a:hover {
+        text-decoration: underline;
+      }
+      @media (max-width: 768px) {
+        .bio-header {
+          font-size: 28px;
+        }
+        .bio {
+          font-size: 16px;
+        }
+        .avatar {
+          width: 150px;
+          height: 150px;
+        }
+        .links a {
+          font-size: 18px;
+          padding: 12px 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background"></div>
 
-  <div class="background"></div>
+    <div class="stars"></div>
 
-  <div class="gradient"></div>
-
-  <div class="bio-header">Biography</div>
-
-  <img class="avatar" src="avatar.jpg" alt="NeX Avatar">
-
-  <div class="links">
-    <a href="https://www.twitch.tv/just_nex1k" target="_blank">Twitch (RU)</a>
-    <a href="https://www.tiktok.com/@justnex1r?_t=ZM-8sKceoxjFqf&_r=1" target="_blank">TikTok (RU)</a>
-    <a href="https://x.com/HiJustNeX?t=BmOSknUoaLT5u8lzHPakMA&s=09" target="_blank">Twitter (EN)</a>
-    <a href="https://youtube.com/@nex1kshmeksik?si=HRAolAo0qLvRrSK4" target="_blank">YouTube (EN)</a>
-    <a href="https://t.me/JustNeXRu" target="_blank">Telegram (RU)</a>
-    <a href="https://t.me/JustNeXEn" target="_blank">Telegram (EN)</a>
-    <a href="https://justnex.itch.io/ragecoreversion1100" target="_blank">My Game</a>
-  </div>
-
-  <div class="bio">
-    Hi! I'm NeX.
-    I'm 15 years old, from Ukraine, and since childhood, I've dreamed of creating something of my own. I've always been passionate about programming, 3D design, and game development, spending countless hours learning new tools and technologies. Right now, I'm working on my biggest and most ambitious project — the boomer shooter Ragecore.
-    Ragecore is a game inspired by the atmosphere of hell and Christian biblical themes. Its protagonist is a cowboy-alcoholic who, despite his questionable past, embarks on a path of war against demons. I'm drawing inspiration from iconic games like DOOM, Quake, and Ultrakill to create a project filled with adrenaline, bloody action, and hardcore battles.
-    I've been developing the game entirely on my own since November 2024: writing code, creating 3D models, textures, animations, and even voice acting. I love working on every detail to create a unique atmosphere and make the game unforgettable. For me, development is more than just work—it's a way to express myself, to pour my soul into every frame and every mechanic.
-    Beyond game development, I’m passionate about digital art. I draw concepts, design characters, build worlds, and stream my creative process. I love sharing my ideas and proving that even as a solo developer, you can create something amazing with enough passion and perseverance.
-    My dream is to make Ragecore a truly iconic game that finds its audience among fans of hardcore action. I want to inspire other developers, especially beginners, and show that game development is an exciting adventure open to anyone.
-    If you're interested in what I do or want to support me, feel free to reach out or follow me on my social media! I’m always happy to meet new people, have interesting conversations, and hear your feedback.
-  </div>
-
-  <div class="footer">
-    How to contact: <a href="mailto:nex1rcontact@gmail.com">nex1rcontact@gmail.com</a>
-  </div>
-
-</body>
+    <img class="avatar" src="avatar.jpg" alt="NeX Avatar">
+    
+    <div class="links">
+      <a href="https://www.twitch.tv/just_nex1k" target="_blank">Twitch (RU)</a>
+      <a href="https://www.tiktok.com/@justnex1r?_t=ZM-8sKceoxjFqf&_r=1" target="_blank">TikTok (RU)</a>
+      <a href="https://x.com/HiJustNeX?t=BmOSknUoaLT5u8lzHPakMA&s=09" target="_blank">Twitter (EN)</a>
+      <a href="https://youtube.com/@nex1kshmeksik?si=HRAolAo0qLvRrSK4" target="_blank">YouTube (EN)</a>
+      <a href="https://t.me/JustNeXRu" target="_blank">Telegram (RU)</a>
+      <a href="https://t.me/JustNeXEn" target="_blank">Telegram (EN)</a>
+      <a href="https://justnex.itch.io/ragecoreversion1100" target="_blank">My Game</a>
+    </div>
+    <div class="bio-header">Biography</div>
+    <div class="bio">
+      Hi! I'm NeX. I'm 15 years old, from Ukraine, and since childhood, I've dreamed of creating something of my own. I've always been passionate about programming, 3D design, and game development, spending countless hours learning new tools and technologies. Right now, I'm working on my biggest and most ambitious project — the boomer shooter Ragecore.
+      <br><br>
+      Ragecore is a game inspired by the atmosphere of hell and Christian biblical themes. Its protagonist is a cowboy-alcoholic who, despite his questionable past, embarks on a path of war against demons. I'm drawing inspiration from iconic games like DOOM, Quake, and Ultrakill to create a project filled with adrenaline, bloody action, and hardcore battles.
+      <br><br>
+      I've been developing the game entirely on my own since November 2024: writing code, creating 3D models, textures, animations, and even voice acting. I love working on every detail to create a unique atmosphere and make the game unforgettable. For me, development is more than just work—it's a way to express myself, to pour my soul into every frame and every mechanic.
+      <br><br>
+      Beyond game development, I’m passionate about digital art. I draw concepts, design characters, build worlds, and stream my creative process. I love sharing my ideas and proving that even as a solo developer, you can create something amazing with enough passion and perseverance.
+      <br><br>
+      My dream is to make Ragecore a truly iconic game that finds its audience among fans of hardcore action. I want to inspire other developers, especially beginners, and show that game development is an exciting adventure open to anyone.
+      <br><br>
+      If you're interested in what I do or want to support me, feel free to reach out or follow me on my social media! I’m always happy to meet new people, have interesting conversations, and hear your feedback.
+    </div>
+    <div class="footer">
+      How to contact: <a href="mailto:nex1rcontact@gmail.com">nex1rcontact@gmail.com</a>
+    </div>
+  </body>
 </html>
