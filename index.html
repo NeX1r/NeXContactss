@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NeX Links</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+  <style>
+    @font-face {
+      font-family: 'HomeVideo';
+      src: url('HomeVideo-Regular.otf') format('opentype');
+    }
 
-      body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'HomeVideo', sans-serif;
         text-align: center;
-        background: #000;
+        background: black;
         color: white;
         display: flex;
         flex-direction: column;
@@ -22,204 +27,176 @@
         min-height: 100vh;
         overflow-x: hidden;
         position: relative;
-      }
+    }
 
-      .background {
+    body::before {
+        content: "";
         position: fixed;
-        top: 0;
-        left: 0;
+        top: 0; left: 0;
         width: 100%;
-        height: 300%;
-        background: radial-gradient(circle at 50% 50%, #2a1b4f, #120934, #000);
-        animation: scroll-bg 30s linear infinite;
-        z-index: -2;
-      }
+        height: 100%;
+        background: url('bg.png') no-repeat center center fixed;
+        background-size: cover;
+        filter: brightness(30%);
+        z-index: -3;
+    }
 
-      @keyframes scroll-bg {
-        0% { background-position: 0 0; }
-        100% { background-position: 0 -200%; }
-      }
-
-      .stars {
+    .overlay {
         position: fixed;
-        width: 200%;
-        height: 200%;
-        background: url('https://www.transparenttextures.com/patterns/stardust.png');
-        animation: move-stars 25s linear infinite;
-        z-index: -1;
-        opacity: 0.7;
-      }
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -2;
+    }
 
-      @keyframes move-stars {
-        0% { transform: translate(0, 0); }
-        100% { transform: translate(-200px, -200px); }
-      }
+    .avatar {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background-color: #444;
+      border: 4px solid #fff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      margin-top: 30px;
+    }
 
-      .avatar {
-        width: 220px;
-        height: 220px;
-        border-radius: 50%;
-        background-color: #eee;
-        border: 4px solid #fff;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        transition: transform 0.3s ease;
-        animation: float 6s ease-in-out infinite;
-        margin-top: 20px;
-      }
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin: 40px 0;
+    }
 
-      .avatar:hover {
-        transform: scale(1.2);
-      }
-
-      @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-15px); }
-      }
-
-      .links {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        margin: 40px 0;
-      }
-
-      .links a {
+    .links a {
         text-decoration: none;
         font-size: 22px;
         font-weight: bold;
         padding: 15px 35px;
-        color: white;
-        background: #1b1044;
-        border: 2px solid #1d0841;
+        background: white;
+        color: black; 
+        border: 2px solid black;
         border-radius: 50px;
         text-transform: uppercase;
-        animation: float-sway 6s ease-in-out infinite;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
+        transition: transform 0.3s ease, background 0.3s ease;
+        position: relative;
+        z-index: 1;
+    }
 
-      @keyframes float-sway {
-        0%, 100% {
-          transform: translateY(0) rotate(-2deg);
-        }
-        25% {
-          transform: translateY(-10px) rotate(1deg);
-        }
-        50% {
-          transform: translateY(-15px) rotate(2deg);
-        }
-        75% {
-          transform: translateY(-10px) rotate(-1deg);
-        }
-      }
+    .links a span {
+      opacity: 1;
+    }
 
-      @keyframes sway-links {
-        0% { transform: rotate(-2deg); }
-        50% { transform: rotate(1deg); }
-        100% { transform: rotate(-1deg); }
-      }
+    .links a:hover {
+      background: #f0f0f0;
+      transform: scale(1.05);
+    }
 
-      @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-15px); }
-      }
+    .bio-header {
+      font-size: 36px;
+      font-weight: bold;
+      color: #fff;
+      text-transform: uppercase;
+      margin-top: 20px;
+      text-shadow: 1px 1px 2px #000;
+    }
 
-      @keyframes sway {
-        0% { transform: rotate(-3deg); }
-        50% { transform: rotate(2deg); }
-        100% { transform: rotate(-1deg); }
-      }
-      .links a:hover {
-        background: #190a50;
-        color: #f2e1ff;
-        border-color: rgb(38, 2, 85);
-        transform: scale(1.2) rotate(4deg);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      }
-      .bio-header {
-        font-size: 36px;
-        font-weight: bold;
-        color: #fff;
-        text-transform: uppercase;
-        margin-top: 20px;
-      }
-      .bio {
+    .bio {
         font-size: 18px;
         margin-bottom: 50px;
-        max-width: 750px;
-        line-height: 1.9;
+        max-width: 800px;
+        line-height: 1.8;
         text-align: justify;
-        padding: 0 20px;
+        padding: 20px;
         text-indent: 30px;
-      }
-      .footer {
-        margin-top: 30px;
-        font-size: 16px;
-        color: #aaa;
-        padding: 10px 20px;
-        background: #222;
-        width: 100%;
-        text-align: center;
-      }
-      .footer a {
-        color: #fff;
-        text-decoration: none;
+        background-color: rgba(0, 0, 0, 0.7);
+        border: 2px solid black;
+        border-radius: 10px;
+        color: white;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    }
+
+    .bio h2 {
+        font-size: 36px;
         font-weight: bold;
-      }
-      .footer a:hover {
-        text-decoration: underline;
-      }
-      @media (max-width: 768px) {
-        .bio-header {
-          font-size: 28px;
-        }
-        .bio {
-          font-size: 16px;
-        }
-        .avatar {
-          width: 150px;
-          height: 150px;
-        }
-        .links a {
-          font-size: 18px;
-          padding: 12px 25px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="background"></div>
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        color: white;
+        text-shadow: 1px 1px 2px #000;
+        text-align: center;
+    }
 
-    <div class="stars"></div>
+    .footer {
+      margin-top: 30px;
+      font-size: 16px;
+      color: white;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.6);
+      width: 100%;
+      text-align: center;
+      border-top: 2px solid black;
+    }
 
-    <img class="avatar" src="avatar.jpg" alt="NeX Avatar">
-    
-    <div class="links">
-      <a href="https://www.twitch.tv/just_nex1k" target="_blank">Twitch (RU)</a>
-      <a href="https://www.tiktok.com/@justnex1r?_t=ZM-8sKceoxjFqf&_r=1" target="_blank">TikTok (RU)</a>
-      <a href="https://x.com/NeXtheDev?t=48JHLq5WVicPl4Y5q_z0EQ&s=09" target="_blank">Twitter (EN)</a>
-      <a href="https://youtube.com/@nex1kshmeksik?si=HRAolAo0qLvRrSK4" target="_blank">YouTube (EN)</a>
-      <a href="https://t.me/JustNeXRu" target="_blank">Telegram (RU)</a>
-      <a href="https://t.me/JustNeXEn" target="_blank">Telegram (EN)</a>
-      <a href="https://justnex.itch.io/ragecoreversion1100" target="_blank">My Game</a>
-      <a href="https://www.reddit.com/user/Havoc_NeX_Lauri/?utm_source=share&utm_medium=mweb3x&utm_name=mweb3xcss&utm_term=1&utm_content=share_button" target="_blank">Reddit</a>
-      <a href="https://www.reddit.com/r/RagecoreGame/s/UAhcfMCmBQ" target="_blank">My reddit community</a>
-    </div>
-    <div class="bio-header">Biography</div>
-    <div class="bio">
-      Hi! I'm NeX(Havoc NeX Lauri). I'm 16 years old, from Ukraine, and since childhood, I've dreamed of creating something of my own. I've always been passionate about programming, 3D design, and game development, spending countless hours learning new tools and technologies. Right now, I'm working on my biggest and most ambitious project — the boomer shooter Ragecore.
-      <br><br>
-      Ragecore is a game inspired by the atmosphere of hell and Christian biblical themes. Its protagonist is a cowboy-alcoholic who, despite his questionable past, embarks on a path of war against demons. I'm drawing inspiration from iconic games like DOOM(2016), Quake, and Ultrakill to create a project filled with adrenaline, bloody action, and hardcore battles.
-      <br><br>
-      I've been developing the game entirely on my own since November 2024: writing code, creating 3D models, textures, animations, and even voice acting. I love working on every detail to create a unique atmosphere and make the game unforgettable. For me, development is more than just work—it's a way to express myself, to pour my soul into every frame and every mechanic.
-      <br><br>
-      Beyond game development, I’m passionate about digital art. I draw concepts, design characters, build worlds, and stream my creative process. I love sharing my ideas and proving that even as a solo developer, you can create something amazing with enough passion and perseverance.
-      <br><br>
-      My dream is to make Ragecore a truly iconic game that finds its audience among fans of hardcore action. I want to inspire other developers, especially beginners, and show that game development is an exciting adventure open to anyone.
-      <br><br>
-      If you're interested in what I do or want to support me, feel free to reach out or follow me on my social media! I’m always happy to meet new people, have interesting conversations, and hear your feedback.
-    </div>
-    <div class="footer">
-      How to contact: <a href="mailto:nex1rcontact@gmail.com">nex1rcontact@gmail.com</a>
-    </div>
-  </body>
+    .footer a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-bottom: 1px solid black;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .bio-header {
+        font-size: 28px;
+      }
+      .bio {
+        font-size: 16px;
+      }
+      .avatar {
+        width: 150px;
+        height: 150px;
+      }
+      .links a {
+        font-size: 18px;
+        padding: 12px 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img class="avatar" src="avatar.jpg" alt="NeX Avatar" />
+
+  <div class="links">
+    <a href="https://www.twitch.tv/just_nex1k" target="_blank" data-text="Twitch (RU)"><span>Twitch (RU)</span></a>
+    <a href="https://www.tiktok.com/@hnl_nex?is_from_webapp=1&sender_device=pc" target="_blank" data-text="TikTok (RU)"><span>TikTok (RU)</span></a>
+    <a href="https://x.com/NeXtheDev?t=48JHLq5WVicPl4Y5q_z0EQ&s=09" target="_blank" data-text="Twitter (EN)"><span>Twitter (EN)</span></a>
+    <a href="https://youtube.com/@nex1kshmeksik?si=HRAolAo0qLvRrSK4" target="_blank" data-text="YouTube (EN)"><span>YouTube (EN)</span></a>
+    <a href="https://t.me/JustNeXRu" target="_blank" data-text="Telegram (RU)"><span>Telegram (RU)</span></a>
+    <a href="https://t.me/JustNeXEn" target="_blank" data-text="Telegram (EN)"><span>Telegram (EN)</span></a>
+    <a href="https://justnex.itch.io/ragecoreversion1100" target="_blank" data-text="My Game"><span>My Game</span></a>
+    <a href="https://www.reddit.com/user/Havoc_NeX_Lauri" target="_blank" data-text="Reddit"><span>Reddit</span></a>
+  </div>
+
+  <div class="bio">
+    <h2>Biography</h2>
+    Hi! I'm NeX (Havoc NeX Lauri). I'm 16 years old, from Ukraine, and since childhood, I've dreamed of creating something of my own. I've always been passionate about programming, 3D design, and game development, spending countless hours learning new tools and technologies. Right now, I'm working on my biggest and most ambitious project — the boomer shooter Ragecore.
+    <br><br>
+    Ragecore is a game inspired by the atmosphere of hell and Christian biblical themes. Its protagonist is a cowboy-alcoholic who, despite his questionable past, embarks on a path of war against demons. I'm drawing inspiration from iconic games like DOOM(2016), Quake, and Ultrakill to create a project filled with adrenaline, bloody action, and hardcore battles.
+    <br><br>
+    I've been developing the game entirely on my own since November 2024: writing code, creating 3D models, textures, animations, and even voice acting. I love working on every detail to create a unique atmosphere and make the game unforgettable. For me, development is more than just work—it's a way to express myself, to pour my soul into every frame and every mechanic.
+    <br><br>
+    Beyond game development, I’m passionate about digital art. I draw concepts, design characters, build worlds, and stream my creative process. I love sharing my ideas and proving that even as a solo developer, you can create something amazing with enough passion and perseverance.
+    <br><br>
+    My dream is to make Ragecore a truly iconic game that finds its audience among fans of hardcore action. I want to inspire other developers, especially beginners, and show that game development is an exciting adventure open to anyone.
+    <br><br>
+    If you're interested in what I do or want to support me, feel free to reach out or follow me on my social media! I’m always happy to meet new people, have interesting conversations, and hear your feedback.
+  </div>
+
+  <div class="footer">
+    How to contact: <a href="mailto:nex1rcontact@gmail.com">nex1rcontact@gmail.com</a>
+  </div>
+</body>
+<div class="overlay"></div>
 </html>
